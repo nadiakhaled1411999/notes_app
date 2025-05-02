@@ -2,21 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
+  const NoteItem({super.key, required this.color});
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 22, bottom: 24, left: 16, right: 5),
       decoration: BoxDecoration(
-        color: Colors.pink,
+        color: color,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           ListTile(
-            contentPadding: const EdgeInsets.all(0),
+            contentPadding:  EdgeInsets.zero,
             trailing: IconButton(
                 onPressed: () {},
                 icon: const Icon(
@@ -30,7 +31,7 @@ class NoteItem extends StatelessWidget {
               ),
             ),
             subtitle: const Padding(
-              padding: EdgeInsets.only(top: 16,bottom: 16),
+              padding: EdgeInsets.only(top: 16, bottom: 16),
               child: Text(
                 "Build your career with Nadia khaled ",
                 style: TextStyle(
