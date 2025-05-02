@@ -27,11 +27,16 @@ class CustomFloatingActionButton extends StatelessWidget {
       ),
       child: FloatingActionButton(
         shape: const CircleBorder(),
-        backgroundColor: Colors.transparent,
+        backgroundColor: const Color.fromARGB(0, 0, 0, 0),
         elevation: 0,
         onPressed: () {
           showModalBottomSheet(
-              context: context, builder: (context) => const AddNoteBottomSheet());
+              shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(16),
+                      topRight: Radius.circular(16))),
+              context: context,
+              builder: (context) => const AddNoteBottomSheet());
         },
         child: const Icon(
           Icons.add,
