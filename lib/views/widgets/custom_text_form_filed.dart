@@ -6,11 +6,11 @@ class CustomTextFormFiled extends StatelessWidget {
       {super.key, required this.hintText, this.maxLines = 1, this.onSaved});
   final String hintText;
   final int maxLines;
-final void Function(String?)?onSaved;
+  final void Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-onSaved:onSaved,
+        onSaved: onSaved,
         validator: (value) {
           if (value?.isEmpty ?? true) {
             return "field is required ";
@@ -24,6 +24,12 @@ onSaved:onSaved,
             hintText: hintText,
             helperStyle: const TextStyle(
               fontSize: 30,
+            ),
+            errorBorder: buildBorder(color: Colors.red),
+            focusedErrorBorder: buildBorder(color: Colors.red),
+            errorStyle: const TextStyle(
+              color: Colors.red,
+              fontSize: 14,
             ),
             enabledBorder: buildBorder(color: kPrimaryColor),
             focusedBorder: buildBorder(color: Colors.white.withOpacity(0.7))));
