@@ -58,7 +58,7 @@ isLoading: state is AddNoteLoadingState?true:false,
                   var noteModel = NoteModel(
                       title: title!,
                       subTitle: subTitle!,
-                      date: DateFormat('EEEE, MMMM d, yyyy').format(DateTime.now()).toString(),
+                      date: DateFormat('MMMM d, yyyy').format(DateTime.now()),
                       color: Colors.orange.value);
                   BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
                 } else {
