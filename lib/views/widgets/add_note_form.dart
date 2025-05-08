@@ -63,7 +63,7 @@ const ColorsItemList(),
                       title: title!,
                       subTitle: subTitle!,
                       date: DateFormat('MMMM d, yyyy').format(DateTime.now()),
-                      color: Colors.orange.value);
+                      color: BlocProvider.of<AddNoteCubit>(context).colorItem.value);
                   BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
                 } else {
                   autovalidateMode = AutovalidateMode.always;

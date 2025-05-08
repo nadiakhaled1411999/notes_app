@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
@@ -20,9 +21,9 @@ class NoteItem extends StatelessWidget {
             ));
       },
       child: Container(
-        padding: const EdgeInsets.only(top: 22, bottom: 24, left: 16, right: 5),
+        padding:  EdgeInsets.only(top: 22, bottom: 24, left: 16, right: 5),
         decoration: BoxDecoration(
-          color: Colors.amber,
+          color: Color(note.color),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
