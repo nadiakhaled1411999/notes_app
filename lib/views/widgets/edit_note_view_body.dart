@@ -30,6 +30,11 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
               widget.note.subTitle = subTitle ?? widget.note.subTitle;
               widget.note.save();
               BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+ScaffoldMessenger.of(context).showSnackBar(
+  const SnackBar(
+    content: Text("Note Updated Successfully"),
+  ),
+);
               Navigator.pop(context);
             },
             title: "Edit Note",

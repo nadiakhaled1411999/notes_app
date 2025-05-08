@@ -64,7 +64,13 @@ const ColorsItemList(),
                       subTitle: subTitle!,
                       date: DateFormat('MMMM d, yyyy').format(DateTime.now()),
                       color: BlocProvider.of<AddNoteCubit>(context).colorItem.value);
+ScaffoldMessenger.of(context).showSnackBar(
+  const SnackBar(
+    content: Text("Note Added Successfully"),
+  ),
+);
                   BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
+
                 } else {
                   autovalidateMode = AutovalidateMode.always;
                   setState(() {});

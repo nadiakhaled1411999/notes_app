@@ -21,7 +21,7 @@ class NoteItem extends StatelessWidget {
             ));
       },
       child: Container(
-        padding:  EdgeInsets.only(top: 22, bottom: 24, left: 16, right: 5),
+        padding: const EdgeInsets.only(top: 22, bottom: 24, left: 16, right: 5),
         decoration: BoxDecoration(
           color: Color(note.color),
           borderRadius: BorderRadius.circular(16),
@@ -34,6 +34,11 @@ class NoteItem extends StatelessWidget {
               trailing: IconButton(
                   onPressed: () {
                     note.delete();
+ScaffoldMessenger.of(context).showSnackBar(
+  const SnackBar(
+    content: Text("Note Deleted Successfully"),
+  ),
+);
                     BlocProvider.of<NotesCubit>(context).fetchAllNotes();
                   },
                   icon: const Icon(
